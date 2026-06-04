@@ -7,6 +7,7 @@ print(type(t))
 t2 = (67,87,56,"ju")
 
 print(t2)
+print(t2[0])
 
 print(f"id of tuple t {id(t)}")
 print(f"id of tuple t2 {id(t2)}")                  

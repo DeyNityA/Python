@@ -1,6 +1,7 @@
 a=4
 b=8.9988888888888
 c="juioo"
+
 print(type(a))
 print(type(b))
 print(type(c))

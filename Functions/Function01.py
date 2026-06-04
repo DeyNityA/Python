@@ -63,3 +63,14 @@ def sum(**kargs) :
 print(sum(Math = 99, Bengali = 67, English = 80))
 
 # order = positional args -> variable length positional args -> keyword args -> variable length keyword args -> default args
+
+#default args alwayas set for first time, if we change the value of default arg, it will change for all the calls to the function, 
+#because default args are stored in the function object, not in the local scope of the function.
+
+def func(a,ls = []) :
+    print(locals())
+    ls.append(a)
+    print(ls)
+
+func(5)
+func(6)
