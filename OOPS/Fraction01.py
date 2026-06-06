@@ -23,6 +23,18 @@ class Fraction :
         f = Fraction(int(self.numerator*other.denominator+other.numerator*self.denominator),int((self.denominator*other.denominator)))
         return f
     
+    def __sub__(self,other) :
+        f = Fraction(int(self.numerator*other.denominator-other.numerator*self.denominator),int((self.denominator*other.denominator)))
+        return f
+    
+    def __mul__(self,other) :
+        f = Fraction(int(self.numerator*other.numerator),int(self.denominator*other.denominator))
+        return f
+    
+    def __truediv__(self,other) :
+        f = Fraction(int(self.numerator*other.denominator),int(self.denominator*other.numerator))
+        return f
+    
     @simplify
     def __str__(self):
         return f"{self.numerator}/{self.denominator}"
@@ -33,8 +45,14 @@ f1 = Fraction(3,4)
 f2 = Fraction(5,6)
 
 f3 = f1+f2
+f4 = f1-f2
+f5 = f1*f2
+f6 = f1/f2
 
 print(f3)
+print(f4)
+print(f5)
+print(f6)
 
 # private members of a class, we can access them using name mangling, but it is not recommended, because it is not a good practice.
 
