@@ -1,3 +1,5 @@
+# python do absolutely nothing at runtime.
+
 class vehicle :
     def __init__(self,maxSpeed) :
         self.__maxSpeed = maxSpeed
@@ -13,9 +15,16 @@ class car(vehicle) :
     def __init__(self,maxSpeed,numberOfDoors) :
         super().__init__(maxSpeed)
         self.numberOfDoors = numberOfDoors
+    
+    #method overriding
+    def honk(self) :
+        print("Car is honking! Beep! Beep!")
         
-    def openTrunk() :
+    def openTrunk(self) :
         print("Trunk is open now")
+
+    def get_numberOfDoors(self) :
+        return self.numberOfDoors
 
 class Truck(vehicle) :   
     def caryLoad() :
@@ -33,6 +42,21 @@ c = car(100,4)
 #print(c._vehicle__maxSpeed)
 c.honk()
 print(c.get_maxSpeed())
+print(isinstance(c,car)) # True
+print(isinstance(c,vehicle)) # True
+print(c.__class__) # <class '__main__.car'>
+
+v= vehicle(120)
+print(isinstance(v,car)) # False
+print(isinstance(v,vehicle)) # True
+v.honk()
+v.__class__ = car # it is not recommended
+print(isinstance(v,car)) # True
+print(isinstance(v,vehicle)) # True
+v.honk() # Car is honking! Beep! Beep!
+v.openTrunk() # Trunk is open now
+# print(v.get_numberOfDoors()) # AttributeError: 'car' object has no attribute 'numberOfDoors'. Did you mean: 'get_numberOfDoors'?
+
 
 t = Truck(80)
 t.honk()
@@ -81,3 +105,41 @@ so in the above example, the show method in F overrides the show method in E, ev
 overloading is not supported in python, but we can achieve it by using default arguments or variable length arguments.
 oveloading method should be defined in the same class.
 '''
+
+# duck typing and strong typing
+# duck typing is a concept in which the type of an object is determined by its behavior rather than its class. 
+# strong typing is a concept in which the type of an object is determined by its class and it does not allow implicit type conversion.
+
+class Duck :
+    def quack(self) :
+        print("Quack! Quack!")
+class Person :
+    def quack(self) :
+        print("I am a person, I can quack like a duck!")
+
+class Car :
+    def honk(self) :
+        print("Beep! Beep!")
+
+def make_it_quack(duck) :
+    duck.quack()
+
+d = Duck()
+p = Person()
+c= Car()
+
+make_it_quack(d) 
+make_it_quack(p) 
+# make_it_quack(c) # AttributeError: 'Car' object has no attribute 'quack'
+
+#strong typing
+# in strong typing, we can check the type of the object before calling the method, so that we can avoid the error at runtime.
+# duck:DUCK is a type hint, it is not a strict type checking, it is just a hint for the programmer and the IDE, 
+# it does not enforce the type checking at runtime. it will still allow us to call the method on any object,
+def make_it_quack_strong(duck:Duck) :
+    if not isinstance(duck,Duck) :
+        raise TypeError("Expected a Duck object")
+    duck.quack()
+
+make_it_quack_strong(d)
+# make_it_quack_strong(p) # TypeError: Expected a Duck object
