@@ -8,6 +8,10 @@ class Student:
           Student.__counter += 1
           Student.__studentlist.append(self)
 
+     @property
+     def email(self) :
+          return f"{self.__name}@gmail.com"
+
      def set_name(self, name):
           self.__name = name
 
@@ -29,5 +33,8 @@ class Student:
 
 st1 = Student("Hero", 13)
 st2 = Student("Zero", 56)
+st1.set_name("guuuu")
+
+print(st1.email)
 
 Student.get_all_students()
