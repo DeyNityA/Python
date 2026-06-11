@@ -2,6 +2,7 @@ def sum(a,b) :
     return a+b
 
 #function is also a object, we can assign it to a variable, we can pass it as an argument to another function, we can return it from another function.
+print(isinstance(sum,object))
 
 print(type(sum))
 fsum = sum

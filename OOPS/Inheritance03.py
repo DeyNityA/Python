@@ -92,9 +92,13 @@ class E :
 class F(E) :
     def show(self,y) :
         print("In F",y)
+    
+    def show(self,y,z) :
+        print("in F",y,z)
 
 f = F()
-f.show(10) 
+#f.show(10) # it will give error as overloading is not possible
+f.show(10,20)
 
 '''
 overriding does not mean that method signatures should be same, it means that method name should be same, 
