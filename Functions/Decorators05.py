@@ -1,4 +1,5 @@
 
+import re
 import time
 
 
@@ -38,3 +39,22 @@ def fact(n) :
 print(func(7))
 
 print(fact(5))
+
+# decorators with arguments
+def typecheck(obj) :
+    def outer_wrapper(func) :
+        def inner_wrapper(*args,**kargs) :
+            for e in args :
+                if type(e) != obj :
+                    return f"You are giving wrong input type for {func.__name__} function"
+            return func(*args,**kargs)
+        return inner_wrapper
+    return outer_wrapper
+
+
+@typecheck(int)
+def add(a,b,c) :
+    return a+b+c;
+
+print(add(5,8,9.9))
+
