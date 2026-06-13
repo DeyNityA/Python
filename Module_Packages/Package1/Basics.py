@@ -9,6 +9,7 @@ builtins.print(builtins.len(s))
 # The built-in functions are always available in the global namespace.
 
 import Module1
+from Module1 import Calculator
 
 print(Module1.add(10,20))
 print(Module1.subtract(10,20))
@@ -18,7 +19,10 @@ try :
 except Exception as e :
    print(e.args[0]) 
 
-calc = Module1.Calculator()
+calc = Calculator()
+print(type(calc))
+print(type(calc)== Module1.Calculator)
+print(type(calc)== Calculator)
 print(calc.add(10,20))
 print(calc.subtract(10,20))
 print(calc.multiply(10,20))

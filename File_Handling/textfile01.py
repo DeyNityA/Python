@@ -66,18 +66,25 @@ with open('/home/ndey/Python/File_Handling/sample2.txt','r') as f :
 
 #converting string to a list or dictionary is not a good practice because it can lead to security issues.
 import json
-with open('/home/ndey/Python/File_Handling/sample3.txt','w') as f :
+
+# serialization and deserialization using json module
+# it can only handle basic data types like int, float, str, list, tuple, dict, bool and None. it cannot handle custom objects.
+# tuple will be converted to list because json does not have a tuple data type.
+# it will convert the tuple to a list and then convert it back to a tuple when we read it back from the file.
+with open('/home/ndey/Python/File_Handling/sample3.json','w') as f :
     json.dump(dict1,f) # it will convert the dictionary to a json format and write it to the file
 
-with open('/home/ndey/Python/File_Handling/sample3.txt','r') as f :
+with open('/home/ndey/Python/File_Handling/sample3.json','r') as f :
+    print(f.read())
+    f.seek(0) # move the file pointer to the beginning of the file
     dict2 = json.load(f) # it will convert the json format back to a python object
     print(dict2.get("name"))
 
 list1 = [1,2,3,4,5]
-with open('/home/ndey/Python/File_Handling/sample4.txt','w') as f :
+with open('/home/ndey/Python/File_Handling/sample4.json','w') as f :
     json.dump(list1,f)
 
-with open('/home/ndey/Python/File_Handling/sample4.txt','r') as f :
+with open('/home/ndey/Python/File_Handling/sample4.json','r') as f :
     list2 = json.load(f)
     print(type(list2))
 
@@ -94,11 +101,28 @@ def deserialize_person(data) :
     return Person(data["name"],data["age"])
 
 person1 = Person("ndey",22)
-with open('/home/ndey/Python/File_Handling/sample7.txt','w') as f :
+with open('/home/ndey/Python/File_Handling/sample7.json','w') as f :
     json.dump(person1,f,default=serialize_person)
 
-with open('/home/ndey/Python/File_Handling/sample7.txt','r') as f :
+with open('/home/ndey/Python/File_Handling/sample7.json','r') as f :
     data = json.load(f,object_hook=deserialize_person)
     print(type(data))
     print(data.name)
 
+
+# serialization and deserialization using pickle module
+# it can handle all data types including custom objects. it is faster than json module.
+# pickle module is not human readable because it converts the data to a binary format. it is not secure because it can execute arbitrary code during deserialization. 
+# it is not recommended to use pickle module for untrusted data.
+
+import pickle
+
+with open('/home/ndey/Python/File_Handling/sample5.pkl','wb') as f :
+    pickle.dump(person1,f)
+
+with open('/home/ndey/Python/File_Handling/sample5.pkl','rb') as f :
+    print(type(f.read())) # it will print the binary data
+    f.seek(0) # move the file pointer to the beginning of the file
+    data = pickle.load(f)
+    print(type(data))
+    print(data.name)
