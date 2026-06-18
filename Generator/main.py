@@ -25,7 +25,6 @@ for i in gen :
 
 #1. creating file of to-do list 
 import json
-import os
 
 ls = ['waking up at 6.00 am' , 'hit gym for at least 10 minutes' , '    ' , 'consume 80gm protein' , '    ' , 'sleep before 11 pm']
 

@@ -36,5 +36,6 @@ st2 = Student("Zero", 56)
 st1.set_name("guuuu")
 
 print(st1.email)
+print(Student._Student__counter)
 
 Student.get_all_students()

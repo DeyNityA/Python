@@ -2,6 +2,7 @@
 # if the file is not present, it will be created or if the file is present, it will be overwritten
 f = open('sample.txt','w')
 f.write('Hello world\nhow are you?')
+f.write('Hi ')
 f.close()
 
 
