@@ -17,8 +17,9 @@ print()
 print('Python Will search importing Module in these PATH :-')
 for e in sys.path :
     print(e)
-
+print()
 import Package1.Module1
+from Package1 import Module1 
 print(Package1.Module1.add(10,20))
 #one package can contain multiple modules and we can import the modules in the package using the syntax import package_name.module_name. 
 #We can also import specific functions or classes from the module using the syntax from package_name.module_name import function_name or class_name.
@@ -26,3 +27,6 @@ print(Package1.Module1.add(10,20))
 
 calc = Package1.Module1.Calculator()
 print(type(calc))
+print(globals())
+
+
