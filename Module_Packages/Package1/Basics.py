@@ -11,8 +11,8 @@ builtins.print(builtins.len(s))
 import Module1
 from Module1 import Calculator
 
-print(Module1.add(10,20))
-print(Module1.subtract(10,20))
+print(Module1.add(10,20)) 
+print(Module1.subtract(10,30))
 print(Module1.multiply(10,20))
 try :
    print(Module1.divide(10,0))
