@@ -1,10 +1,10 @@
 import copy
 
-l = [67,90,23,"a","yui",-9,True]
+l = [67,90,23,"a","yui",-9,True]*2
 print(type(l))
 print(len(l))
 
-for i in range(1,len(l)) :
+for i in range(0,len(l)) :
     print(l[i],end=" ")
 
 print()

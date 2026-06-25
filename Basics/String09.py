@@ -1,17 +1,18 @@
-str = "gyyhuhuhg jkiop hjio hjoi yg"
+str = "gyyhuhuhg  6 jkiop hjio hjoi yg"
 str2 = "gyyhuhuhg jkiop hjio hjoi yg"
 
 print(f"id of str {id(str)}")
 print(f"id of str2  {id(str2)}")
+print(str+"ko")
 
 #strings are immutable
 #str[1]="k" not possible
 print(len(str))
-print ("y" in str)
-print(str.index("y"))
+print ("hu" in str)
+print(str.index("hu"))
 
 for e in str :
-    print(e)
+    print(e,e.isalnum())
 
 print(ord("y")) #ascii code
 print(chr(121))

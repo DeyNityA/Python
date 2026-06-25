@@ -46,7 +46,7 @@ source .venv/bin/activate
 
 pip is a package manager for Python.
 
-It is a tool that downloads and installs Python packages (modules/libraries) from the Python Package Index (PyPI).
+It is a tool that downloads and installs Python packages (modules/libraries) from the Python Package Index (PyPI). basically used in virual env.
 '''
 
 

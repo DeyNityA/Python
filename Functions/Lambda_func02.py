@@ -12,6 +12,8 @@ print(sorted(l))
 print(sorted(l, key = len, reverse = True))
 print(sorted(l,key = lambda e : e.split(" ")[::-1][0][0])) #sorting based surname first letter
 
+print(l)
+
 '''
 Higer order functions - a function that takes another function as an argument or returns a function as a result is called a higher-order function.
 '''
