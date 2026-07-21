@@ -1,0 +1,16 @@
+# Ignore virtual environments anywhere
+.venv/
+**/.venv/
+venv/
+**/venv/
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# Large datasets
+*.csv
+
+# VS Code
+.vscode/

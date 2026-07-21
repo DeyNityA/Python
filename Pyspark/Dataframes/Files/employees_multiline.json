@@ -1,0 +1,23 @@
+[
+  {
+    "id": 101,
+    "name": "Alice Smith",
+    "department": "Engineering",
+    "skills": ["Python", "Spark", "SQL"],
+    "salary": 105000
+  },
+  {
+    "id": 102,
+    "name": "Bob Jones",
+    "department": "Data Science",
+    "skills": ["R", "Python", "Machine Learning"],
+    "salary": 115000
+  },
+  {
+    "id": 103,
+    "name": "Charlie Brown",
+    "department": "Marketing",
+    "skills": ["SEO", "Analytics"],
+    "salary": 85000
+  }
+]

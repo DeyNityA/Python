@@ -1,0 +1,1 @@
+["waking up at 6.00 am", "hit gym for at least 10 minutes", "    ", "consume 80gm protein", "    ", "sleep before 11 pm"]
